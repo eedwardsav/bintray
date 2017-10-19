@@ -1,14 +1,29 @@
+
+## modules
+
+## commands
+
+# rerun bintray: package-uri
 RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
   add-command \
   --command package-uri \
   --description "Retrieves URIs for remote package artifacts of a specified version." \
   --module bintray
 
+# rerun bintray: package-version
+RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
+  add-command \
+  --command package-version \
+  --description "Retrieves versions for specified remote package." \
+  --module bintray
+
+## options
+
 # --org
 RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
   add-option \
   --arg "true" \
-  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri" \
+  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri,package-version" \
   --description "The bintray organization." \
   --export "false" \
   --long "org" \
@@ -20,7 +35,7 @@ RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
 RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
   add-option \
   --arg "true" \
-  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri" \
+  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri,package-version" \
   --description "The targeted repo." \
   --export "false" \
   --long "repo" \
@@ -32,7 +47,7 @@ RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
 RERUN_MODULES=$(pwd)/modules ./rerun stubbs: \
   add-option \
   --arg "true" \
-  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri" \
+  --command "package-delete,package-exists,package-update,package-upload,package-upload-deb,package-uri,package-version" \
   --description "The package name." \
   --export "false" \
   --long "package" \
