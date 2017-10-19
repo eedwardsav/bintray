@@ -17,9 +17,8 @@ rerun_options_parse "$@"
 # ----------------------
 
 # - - -
-# Put the command implementation here.
+scrape_bintray_package_for_versions "$ORG" "$REPO" "$PACKAGE"
 # - - -
 
 # Done. Exit with last command exit status.
 exit $?
-
