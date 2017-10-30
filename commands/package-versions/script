@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-#/ command: bintray:package-version: "Retrieves versions for specified remote package."
-#/ usage: rerun bintray:package-version  --org <>  --repo <>  --package <> 
+#/ command: bintray:package-versions: "Retrieves versions for specified remote package."
+#/ usage: rerun bintray:package-versions  --org <>  --repo <>  --package <> 
 #/ rerun-variables: RERUN, RERUN_VERSION, RERUN_MODULES, RERUN_MODULE_DIR
 #/ option-variables: ORG REPO PACKAGE
 
-. $RERUN_MODULE_DIR/lib/functions.sh package-version || { 
+. $RERUN_MODULE_DIR/lib/functions.sh package-versions || { 
   echo >&2 "Failed loading function library." ; exit 1 ; 
 }
 

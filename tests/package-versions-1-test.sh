@@ -1,6 +1,6 @@
 #!/usr/bin/env roundup
 #
-#/ usage:  rerun stubbs:test -m bintray -p package-version [--answers <>]
+#/ usage:  rerun stubbs:test -m bintray -p package-versions [--answers <>]
 #
 
 set -u
@@ -51,7 +51,7 @@ DEFAULT_CURL_MOCK_TEMPFILE="/tmp/curl_mock_counter"
 
 # The Plan
 # --------
-describe "package-version"
+describe "package-versions"
 
 after() {
   if [ -e $DEFAULT_CURL_MOCK_TEMPFILE ]; then
@@ -84,7 +84,7 @@ it_errors_when_no_versions_are_found() {
   
   # invoke rerun
   local exitcode=
-  $(rerun bintray: package-version \
+  $(rerun bintray: package-versions \
       --org "$DEFAULT_ORG" \
       --repo "$DEFAULT_REPO" \
       --package "$DEFAULT_PACKAGE") && {
@@ -119,7 +119,7 @@ it_returns_req_package_versions() {
   export -f curl
   
   # invoke rerun
-  requested_package_versions=$(rerun bintray: package-version \
+  requested_package_versions=$(rerun bintray: package-versions \
     --org "$DEFAULT_ORG" \
     --repo "$DEFAULT_REPO" \
     --package "$DEFAULT_PACKAGE") || echo >&2 "rerun test call failed with exit code: $?"
